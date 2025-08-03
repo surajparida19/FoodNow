@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodNow - Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                <span>FoodNow</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#restaurants" class="nav-link">Restaurants</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="pages/login.html" class="login-btn">Login</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Delicious Food <span>Delivered Fast</span></h1>
+                <p>Order from your favorite restaurants and get fresh, hot food delivered to your doorstep in minutes.</p>
+                
+                <div class="search-container">
+                    <div class="location-input">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your delivery location" id="location-input">
+                    </div>
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for restaurants or dishes" id="search-input">
+                        <button class="search-btn" onclick="searchRestaurants()">Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Food Delivery">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants -->
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Restaurants</h2>
+            <div class="featured-grid" id="featured-grid">
+                <!-- Featured restaurants will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All Restaurants -->
+    <section class="restaurants" id="restaurants">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Restaurants</h2>
+                <div class="filters">
+                    <select id="cuisine-filter">
+                        <option value="">All Cuisines</option>
+                        <option value="italian">Italian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="american">American</option>
+                        <option value="indian">Indian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="mexican">Mexican</option>
+                    </select>
+                    <select id="rating-filter">
+                        <option value="">All Ratings</option>
+                        <option value="4.5">4.5+ Stars</option>
+                        <option value="4.0">4.0+ Stars</option>
+                        <option value="3.5">3.5+ Stars</option>
+                    </select>
+                </div>
+            </div>
+            <div class="restaurants-grid" id="restaurants-grid">
+                <!-- All restaurants will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; color: #666; padding: 2rem;">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Delivery Fee:</span>
+                    <span id="delivery-fee">$2.99</span>
+                </div>
+                <div class="total-row total">
+                    <span>Total:</span>
+                    <span id="total">$2.99</span>
+                </div>
+            </div>
+            <a href="pages/checkout.html" class="checkout-btn" id="checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>FoodNow</span>
+                    </div>
+                    <p>Delivering happiness, one meal at a time. Fresh food from your favorite restaurants, delivered fast and fresh.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#restaurants">Restaurants</a></li>
+                        <li><a href="pages/track-order.html">Track Order</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Restaurants</h4>
+                    <ul>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">Restaurant Dashboard</a></li>
+                        <li><a href="#">Business Support</a></li>
+                        <li><a href="#">Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FoodNow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
